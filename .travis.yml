@@ -1,0 +1,10 @@
+language: go
+go: "1.14"
+before_script:
+  - go vet ./...
+install:
+  - ./travis/install_ninja.sh
+  - ./travis/create_bood.sh
+script:
+  - cd $GOPATH/src/github.com/KHYehor/design-lab2
+  - ./travis/create_custom.sh
