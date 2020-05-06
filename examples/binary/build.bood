@@ -5,6 +5,7 @@ go_binary {
   // Go package to build.
   pkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
   testPkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
+  outTestFile: "test.txt",
   // Build inputs.
   srcs: ["**/*.go", "../go.mod"],
 

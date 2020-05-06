@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	pctx = blueprint.NewPackageContext("github.com/KHYehor/design-lab2/build/gomodule")
+	pctx = blueprint.NewPackageContext("github.com/KHYehor/desing-lab2/build/gomodule")
 
 	goBuild = pctx.StaticRule("binaryBuild", blueprint.RuleParams{
 		Command:     "cd $workDir && go build -o $outputPath $pkg",
@@ -16,9 +16,9 @@ var (
 	}, "workDir", "outputPath", "pkg")
 
 	goTest = pctx.StaticRule("gotest", blueprint.RuleParams{
-		Command:     "cd $workDir && go test -v $pkgTest",
+		Command:     "cd $workDir && go test -v $pkgTest > $outputFile",
 		Description: "test $pkgTest",
-	}, "workDir", "pkgTest")
+	}, "workDir", "pkgTest", "outputFile")
 
 	goVendor = pctx.StaticRule("vendor", blueprint.RuleParams{
 		Command:     "cd $workDir && go mod vendor",
@@ -108,6 +108,7 @@ func (bm *BinaryModule) GenerateBuildActions(ctx blueprint.ModuleContext) {
 		Implicits:   inputsTest,
 		Optional:    bm.properties.Optional,
 		Args: map[string]string{
+			"outputFile":     outputFile,
 			"workDir":        ctx.ModuleDir(),
 			"pkgTest":        bm.properties.TestPkg,
 		},
