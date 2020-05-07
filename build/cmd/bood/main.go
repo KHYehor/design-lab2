@@ -26,6 +26,8 @@ func NewContext() *blueprint.Context {
 }
 
 func main() {
+	flag.Parse()
+
 	config := bood.NewConfig()
 	if !*verbose {
 		config.Debug = log.New(ioutil.Discard, "", 0)
@@ -36,7 +38,7 @@ func main() {
 
 	if !*dryRun {
 		config.Info.Println("Starting the build now")
-		cmd := exec.Command("ninja", append([]string{"-f", ninjaBuildPath})...)
+		cmd := exec.Command("ninja", append([]string{"-f", ninjaBuildPath}, flag.Args()...)...)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
 		cmd.Stderr = os.Stderr
