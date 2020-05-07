@@ -33,7 +33,7 @@ type BinaryModule struct {
 
 	properties struct {
 		Pkg string
-		TestPkg string
+		//TestPkg string
 		OutTestFile string
 		Srcs []string
 		SrcsExclude []string
@@ -101,18 +101,18 @@ func (bm *BinaryModule) GenerateBuildActions(ctx blueprint.ModuleContext) {
 		})
 	}
 
-	ctx.Build(pctx, blueprint.BuildParams{
-		Description: fmt.Sprintf("Test my module"),
-		Rule:        goTest,
-		Outputs:     []string{outputFile},
-		Implicits:   inputsTest,
-		Optional:    bm.properties.Optional,
-		Args: map[string]string{
-			"outputFile":     outputFile,
-			"workDir":        ctx.ModuleDir(),
-			"pkgTest":        bm.properties.TestPkg,
-		},
-	})
+	//ctx.Build(pctx, blueprint.BuildParams{
+	//	Description: fmt.Sprintf("Test my module"),
+	//	Rule:        goTest,
+	//	Outputs:     []string{outputFile},
+	//	Implicits:   inputsTest,
+	//	Optional:    bm.properties.Optional,
+	//	Args: map[string]string{
+	//		"outputFile":     outputFile,
+	//		"workDir":        ctx.ModuleDir(),
+	//		"pkgTest":        bm.properties.TestPkg,
+	//	},
+	//})
 }
 
 func (bm *BinaryModule) Outputs() []string {
