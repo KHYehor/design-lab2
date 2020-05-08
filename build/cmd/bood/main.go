@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	ykh2k "github.com/ykh2k/design-lab2/build/gomodule"
+	KHYehor "github.com/KHYehor/design-lab2/build/gomodule"
 	"github.com/google/blueprint"
 	"github.com/roman-mazur/bood"
 
@@ -20,8 +20,8 @@ var (
 
 func NewContext() *blueprint.Context {
 	ctx := bood.PrepareContext()
-	ctx.RegisterModuleType("zip_archive", ykh2k.SimpleArchiveFactory)
-	ctx.RegisterModuleType("go_binary", ykh2k.SimpleBinFactory)
+	ctx.RegisterModuleType("zip_archive", KHYehor.SimpleArchiveFactory)
+	ctx.RegisterModuleType("go_binary", KHYehor.SimpleBinFactory)
 	return ctx
 }
 

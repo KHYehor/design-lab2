@@ -6,5 +6,5 @@ install:
   - ./travis/install_ninja.sh
   - ./travis/create_bood.sh
 script:
-  - cd $GOPATH/src/github.com/ykh2k/design-lab2
+  - cd $GOPATH/src/github.com/KHYehor/design-lab2
   - ./travis/create_custom.sh
