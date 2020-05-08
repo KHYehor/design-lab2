@@ -5,9 +5,8 @@ go_binary {
   pkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
   testPkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
   // Build inputs.
-  srcs: ["**/*.go", "go.mod"],
+  srcs: ["./build/cmd/bood/main.go", "go.mod"],
   outTestFile: "test1.txt",
-  srcsExclude: ["vendor/**/*", "examples/**/*"],
 
   // Flag to also perform dependencies vendoring.
   vendorFirst: false
