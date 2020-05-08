@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	pctx = blueprint.NewPackageContext("github.com/KHYehor/desing-lab2/build/gomodule")
+	pctx = blueprint.NewPackageContext("github.com/ykh2k/desing-lab2/build/gomodule")
 
 	goBuild = pctx.StaticRule("binaryBuild", blueprint.RuleParams{
 		Command:     "cd $workDir && go build -o $outputPath $pkg",

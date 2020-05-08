@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	ykh2k "github.com/KHYehor/design-lab2/build/gomodule"
+	ykh2k "github.com/ykh2k/design-lab2/build/gomodule"
 	"github.com/google/blueprint"
 	"github.com/roman-mazur/bood"
 

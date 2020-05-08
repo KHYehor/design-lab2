@@ -1,4 +1,4 @@
-module github.com/KHYehor/design-lab2
+module github.com/ykh2k/design-lab2
 
 go 1.14
 
