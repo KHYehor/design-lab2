@@ -2,8 +2,8 @@ go_binary {
   name: "bood",
 
   // Go package to build.
-  pkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
-  testPkg: "github.com/KHYehor/design-lab2/build/cmd/bood",
+  pkg: "github.com/ykh2k/design-lab2/build/cmd/bood",
+  testPkg: "github.com/yk2hk/design-lab2/build/cmd/bood",
   // Build inputs.
   srcs: ["**/*.go", "go.mod"],
   outTestFile: "test1.txt",
