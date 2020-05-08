@@ -20,7 +20,7 @@ var (
 
 func NewContext() *blueprint.Context {
 	ctx := bood.PrepareContext()
-	ctx.RegisterModuleType("zip_archive", KHYehor.SimpleArchiveFactory)
+	//ctx.RegisterModuleType("zip_archive", KHYehor.SimpleArchiveFactory)
 	ctx.RegisterModuleType("go_binary", KHYehor.SimpleBinFactory)
 	return ctx
 }
