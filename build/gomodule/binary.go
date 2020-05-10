@@ -78,7 +78,7 @@ func (bm *BinaryModule) GenerateBuildActions(ctx blueprint.ModuleContext) {
 			Rule:        goVendor,
 			Outputs:     []string{vendorDirPath},
 			Implicits:   []string{path.Join(ctx.ModuleDir(), "go.mod")},
-			Optional:    true,
+			Optional:    bm.properties.Optional,
 			Args: map[string]string{
 				"workDir": ctx.ModuleDir(),
 				"name":    name,

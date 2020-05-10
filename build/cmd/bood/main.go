@@ -37,7 +37,7 @@ func main() {
 	ninjaBuildPath := bood.GenerateBuildFile(config, ctx)
 	var args []string
 	for _, v := range flag.Args() {
-		args = append(args, "out/bin" + v)
+		args = append(args, "out/bin/" + v)
 	}
 
 	if !*dryRun {
