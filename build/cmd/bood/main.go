@@ -35,10 +35,14 @@ func main() {
 	ctx := NewContext()
 
 	ninjaBuildPath := bood.GenerateBuildFile(config, ctx)
+	var args []string
+	for _, v := range flag.Args() {
+		args = append(args, "out/bin/" + v)
+	}
 
 	if !*dryRun {
 		config.Info.Println("Starting the build now")
-		cmd := exec.Command("ninja", append([]string{"-f", ninjaBuildPath}, flag.Args()...)...)
+		cmd := exec.Command("ninja", append([]string{"-f", ninjaBuildPath}, args...)...)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
 		cmd.Stderr = os.Stderr
